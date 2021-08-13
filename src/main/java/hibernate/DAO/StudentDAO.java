@@ -28,7 +28,7 @@ public class StudentDAO {
     public void persist(Student entity) {
       EntityManager em = getEntityManager();
       em.getTransaction().begin();
-      em.merge(entity);
+      em.persist(entity);
       em.getTransaction().commit();
       em.close();
     }
@@ -37,7 +37,7 @@ public class StudentDAO {
         EntityManager em = getEntityManager();
         em.getTransaction().begin();
         for (Student s : enList){
-            em.merge(s);
+            em.persist(s);
         }
         em.getTransaction().commit();
         em.close();
@@ -52,7 +52,7 @@ public class StudentDAO {
         em.getTransaction().begin();
         Student s = em.find(Student.class,id);
         s.setName(name);
-        em.persist(s);
+        em.merge(s);
         em.getTransaction().commit();
         em.close();
         return s;

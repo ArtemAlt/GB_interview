@@ -3,6 +3,7 @@ package hibernate;
 import hibernate.DAO.StudentDAO;
 import hibernate.entity.Student;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class Main {
         System.out.println(dao.updateById(500L, "test1"));
         System.out.println(dao.deleteById(501L));
         System.out.println(dao.deleteAll());
+
 
     }
 }
